@@ -48,6 +48,12 @@ docker run --rm \
   ghcr.io/diegojfer/dondns-rs:latest
 ```
 
+### Kubernetes
+
+The same image can be deployed to a Kubernetes cluster as a CronJob, making it well-suited for small personal lab clusters whose nodes have dynamic public IP addresses. The job runs on a schedule and calls the DonDominio API without an explicit IP, so the API automatically registers the node's current public IP — keeping the DNS record in sync as the address changes over time.
+
+See [k8s/README.md](./k8s/README.md) for deployment instructions.
+
 ### Output
 
 On success, a single line is printed to stdout and the process exits with code `0`:
