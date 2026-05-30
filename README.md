@@ -1,6 +1,7 @@
-# dondns-rs
 
 ![DonDNS-Rust](./res/dondns-rust.png)
+
+# dondns-rs
 
 A minimal CLI binary to update a [DonDominio](https://www.dondominio.com) dynamic DNS record via their JSON API.
 
@@ -18,8 +19,6 @@ The binary will be at `target/release/dondns-rs`.
 
 Configure the following environment variables before running:
 
-| Variable | Description |
-|---|---|
 | Variable | Required | Description |
 |---|---|---|
 | `DONDNS_USERNAME` | Yes | DonDominio account username |
@@ -35,6 +34,18 @@ export DONDNS_PASSWORD=mypassword
 export DONDNS_HOSTNAME=home.example.com
 
 ./dondns
+```
+
+### Docker
+
+Pull the latest image and run it with the required environment variables:
+
+```bash
+docker run --rm \
+  -e DONDNS_USERNAME=username \
+  -e DONDNS_PASSWORD=password \
+  -e DONDNS_HOSTNAME=home.example.com \
+  ghcr.io/diegojfer/dondns-rs:latest
 ```
 
 ### Output
